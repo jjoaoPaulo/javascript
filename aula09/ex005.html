@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        body{
+            background-color: lightcoral;
+            color: white;
+            font: normal 1em Arial;
+        }
+        div#interaja{
+            background-color: green;
+            width: 500px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendendo a usar o DOM</h1>
+    <p>Bololo</p>
+    <p>Balalau</p>
+    <div id="interaja">Clique em mim</div>
+
+    <script>
+        var a = window.document.getElementById("interaja")
+        a.addEventListener('mousedown', clicar)
+        a.addEventListener('mouseup', soltar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function entrar(){
+            a.innerText = 'entrou'
+        }
+        function clicar(){
+            a.innerText = 'clicou'
+            a.style.background = 'red'
+        }
+        function soltar(){
+            a.innerText = 'Clique em mim'
+            a.style.background = 'green'
+        }
+        function sair(){
+            a.innerText = 'Clique em mim'
+        }
+    </script>
+</body>
+</html>
