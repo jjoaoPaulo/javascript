@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <label for="textvel">Velocidade do carro: </label>
+    <input type="number" name="textvel" id="textvel"> km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <div id="res">Resultado: </div>
+
+    <script>
+        function calcular(){
+            var txtv = document.getElementById('textvel')
+            var vel = Number(txtv.value)
+            var res = document.getElementById('res')
+            if(vel > 60){
+                res.innerHTML = `Sua velocidade atual é de ${vel} vc foi multado`
+            }else{
+                res.innerHTML = `Sua velocidade atual é de ${vel} vc ta suave`
+            }
+        }
+    </script>
+</body>
+</html>
